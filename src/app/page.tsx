@@ -1,25 +1,41 @@
-import {Cards} from '@/components/cards';
-import {Copy} from '@/components/copy';
-import {Header} from '@/components/header';
+'use client';
+
+import {FaqSection} from '@/components/landing/faq-section';
+import {Footer} from '@/components/landing/footer';
+import {Header} from '@/components/landing/header';
+import {HeroSection} from '@/components/landing/hero-section';
+import {LeadFormSection} from '@/components/landing/lead-form-section';
+import {LocalAdvantage} from '@/components/landing/local-advantage';
+import {OrganicBackdrop} from '@/components/landing/organic-backdrop';
+import {ProcessSection} from '@/components/landing/process-section';
+import {ServicesGrid} from '@/components/landing/services-grid';
+import {TaglineReveal} from '@/components/landing/tagline-reveal';
+import {Testimonials} from '@/components/landing/testimonials';
+import {TrustStrip} from '@/components/landing/trust-strip';
 
 export default function Page() {
   return (
-    <main className="flex h-svh w-full flex-col overflow-hidden bg-[#06234f] bg-[linear-gradient(90deg,rgba(2,24,64,.94)_0%,rgba(3,30,73,.8)_46%,rgba(4,34,79,.38)_100%),url('/images/halftone-landscape-hero.webp')] bg-cover bg-position-[42%_center] bg-no-repeat px-5 pt-[env(safe-area-inset-top)] sm:px-7 md:bg-center md:px-[clamp(28px,4.3vw,72px)]">
-      <Header />
-
-      <section
-        id="top"
-        className="flex min-h-0 flex-1 flex-col justify-center gap-2 sm:gap-4 md:flex-row md:items-center md:justify-between md:gap-[4vw] [@media(max-height:500px)]:flex-row [@media(max-height:500px)]:items-center"
+    <div className="relative isolate overflow-hidden">
+      <a
+        href="#main-content"
+        className="focus-ring fixed left-4 top-4 -translate-y-24 rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] focus:translate-y-0"
       >
-        <Copy />
-        <Cards />
-      </section>
-
-      <footer className="flex min-h-13.5 shrink-0 items-center justify-center border-t border-foreground/15 pb-[env(safe-area-inset-bottom)] md:min-h-22.5 md:justify-start [@media(max-height:500px)]:hidden [@media(max-height:700px)_and_(min-width:721px)]:min-h-16.25">
-        <p className="font-mono text-[8px] tracking-[.07em] text-foreground/50 uppercase md:text-[9px]">
-          Built for teams with something worth clicking.
-        </p>
-      </footer>
-    </main>
+        Skip to content
+      </a>
+      <OrganicBackdrop />
+      <Header />
+      <main id="main-content" className="pt-20">
+        <HeroSection />
+        <TrustStrip />
+        <ServicesGrid />
+        <ProcessSection />
+        <LocalAdvantage />
+        <TaglineReveal />
+        <Testimonials />
+        <FaqSection />
+        <LeadFormSection />
+      </main>
+      <Footer />
+    </div>
   );
 }

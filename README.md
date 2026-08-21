@@ -1,21 +1,31 @@
-# Next.js template
+# MTH Studio local landing page
 
-This is a Next.js template with shadcn/ui.
+A responsive Next.js 16 landing page for a Lisbon software studio serving local home service businesses. The page uses Tailwind CSS, shadcn components, Framer Motion, and Lucide icons.
 
-## Adding components
+## Run locally
 
-To add components to your app, run the following command:
+1. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+2. Start the local development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000).
+
+## Checks
 
 ```bash
-npx shadcn@latest add button
+pnpm typecheck
+pnpm lint
+pnpm build
 ```
 
-This will place the ui components in the `components` directory.
+The quote form is an interactive local demo. It validates all fields and shows loading and success states, but it does not transmit data. Connect it to an approved email service or CRM before publishing.
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
-```
+Placeholder home service artwork lives in `public/images/` and is referenced from `components/landing/placeholder-images.ts`.

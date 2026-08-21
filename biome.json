@@ -17,9 +17,10 @@
       "!**/*.svg",
       "!**/coverage",
       "!**/templates",
-      "!src/components/ui",
-      "!src/app/generated",
-      "!src/app/globals.css"
+      "!next-env.d.ts",
+      "!components/ui",
+      "!app/generated",
+      "!app/globals.css"
     ]
   },
   "formatter": {
