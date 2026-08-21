@@ -52,9 +52,9 @@ export function HeroSection() {
         animate={{opacity: 1, y: 0, filter: 'blur(0px)'}}
         transition={{duration: 0.9, ease: [0.32, 0.72, 0, 1]}}
       >
-        <h1 className="text-balance max-w-7xl leading-[0.82] tracking-tighter font-mono text-4xl font-semibold text-white sm:text-6xl lg:text-7xl xl:text-8xl 2xl:max-w-none 2xl:text-9xl">
+        <h1 className="text-balance text-7xl sm:text-8xl max-w-7xl leading-[0.82] tracking-tighter font-mono font-semibold text-white 2xl:max-w-none">
           <span className="md:block">Websites that </span>
-          <span className="md:block">keep local service </span>
+          <span className="md:block">keep local business </span>
           <span className="mt-2 inline-block bg-accent px-2 py-1 text-accent-foreground sm:px-4 sm:py-2 lg:px-6 lg:py-3 2xl:py-6">
             teams booked.
           </span>

@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  ArrowRightIcon,
-  CheckCircle2Icon,
-  Clock3Icon,
-  MapPinIcon,
-} from 'lucide-react';
+import {ArrowRightIcon, CheckCircle2Icon, Clock3Icon} from 'lucide-react';
 import type {FormEvent} from 'react';
 import {useState} from 'react';
 
@@ -91,14 +86,6 @@ export function LeadFormSection() {
                 <p className="flex items-center gap-3">
                   <Clock3Icon className="size-5 text-accent" />
                   Reply within one business day
-                </p>
-                <p className="flex items-center gap-3">
-                  <MapPinIcon className="size-5 text-accent" />
-                  Lisbon based, serving Portugal
-                </p>
-                <p className="flex items-center gap-3">
-                  <CheckCircle2Icon className="size-5 text-accent" />
-                  Free first conversation
                 </p>
               </div>
             </div>
@@ -188,7 +175,7 @@ export function LeadFormSection() {
                           }}
                         >
                           <SelectTrigger
-                            className="w-full"
+                            className="w-full bg-background/60 h-10!"
                             aria-invalid={Boolean(errors.service)}
                           >
                             <SelectValue />
@@ -199,6 +186,7 @@ export function LeadFormSection() {
                                 <SelectItem
                                   key={option.value ?? 'placeholder'}
                                   value={option.value}
+                                  disabled={!option.value}
                                 >
                                   {option.label}
                                 </SelectItem>

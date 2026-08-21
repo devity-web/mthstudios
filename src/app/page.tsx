@@ -7,9 +7,10 @@ import {HeroSection} from '@/components/landing/hero-section';
 import {LeadFormSection} from '@/components/landing/lead-form-section';
 import {OrganicBackdrop} from '@/components/landing/organic-backdrop';
 import {ProcessSection} from '@/components/landing/process-section';
+import {ProjectsSection} from '@/components/landing/projects-section';
 import {ServicesGrid} from '@/components/landing/services-grid';
 import {TaglineReveal} from '@/components/landing/tagline-reveal';
-import {Testimonials} from '@/components/landing/testimonials';
+// import {Testimonials} from '@/components/landing/testimonials';
 import {TrustStrip} from '@/components/landing/trust-strip';
 
 const tagLine =
@@ -34,7 +35,8 @@ export default function Page() {
         <ServicesGrid />
         <ProcessSection />
         <TaglineReveal words={tagLine} />
-        <Testimonials />
+        <ProjectsSection />
+        {/* <Testimonials /> */}
         <FaqSection />
         <LeadFormSection />
       </main>

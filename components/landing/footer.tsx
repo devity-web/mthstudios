@@ -19,8 +19,8 @@ export function Footer() {
                 <Image
                   src="/images/mth-studios-mark-minimal-black-256.png"
                   alt=""
-                  width={28}
-                  height={28}
+                  width={48}
+                  height={48}
                 />
               </span>
               <span className="text-sm font-semibold tracking-tight">

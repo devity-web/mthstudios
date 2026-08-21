@@ -10,9 +10,9 @@ import {cn} from '@/lib/utils';
 
 const links = [
   {label: 'Services', href: '#services'},
-  {label: 'Process', href: '#process'},
-  {label: 'Why local', href: '#local'},
-  {label: 'Reviews', href: '#reviews'},
+  {label: 'Ways of work', href: '#process'},
+  {label: 'Our projects', href: '#projects'},
+  // {label: 'Reviews', href: '#reviews'},
 ];
 
 export function Header() {
