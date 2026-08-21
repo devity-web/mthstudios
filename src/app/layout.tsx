@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   ),
-  title: 'Local software studio for service businesses | MTH Studio',
+  title: 'Software studio for businesses | MTH Studio',
   description:
     'MTH Studio designs and builds websites, booking flows, and custom software for local home service businesses in Lisbon and across Portugal.',
   keywords: [
     'Lisbon software studio',
+    'Leiria software',
     'home service website design',
     'local business software',
     'booking website development',
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MTH Studio for local service businesses',
+    title: 'MTH Studio for businesses',
     description:
       'Websites and software designed to turn local demand into booked work.',
     images: ['/og.png'],

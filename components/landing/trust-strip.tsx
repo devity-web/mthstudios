@@ -9,7 +9,7 @@ const partners = ['Next.js', 'Vercel', 'Supabase', 'Stripe', 'Google Business'];
 
 export function TrustStrip() {
   return (
-    <Reveal as="section" className="section-shell pb-20">
+    <Reveal as="section" className="section-shell py-20">
       <div className="glass-surface flex flex-col gap-6 rounded-2xl p-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-center gap-3">
           <span className="flex size-10 items-center justify-center rounded-full bg-secondary">

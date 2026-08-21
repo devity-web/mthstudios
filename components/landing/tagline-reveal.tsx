@@ -9,17 +9,17 @@ import {
 } from 'framer-motion';
 import {useRef} from 'react';
 
-const words =
-  'Turn local attention into booked work, then give your team better tools to deliver it.'
-    .split(' ')
-    .map((word, id) => ({id: `${id + 1}-${word}`, word}));
-
-function RevealWord({
+export function RevealWord({
   progress,
   index,
+  words,
 }: {
   progress: MotionValue<number>;
   index: number;
+  words: {
+    id: string;
+    word: string;
+  }[];
 }) {
   const start = index / words.length;
   const end = start + 1 / words.length;
@@ -37,7 +37,7 @@ function RevealWord({
   );
 }
 
-export function TaglineReveal() {
+export function TaglineReveal({words}: {words: {id: string; word: string}[]}) {
   const sectionRef = useRef<HTMLElement>(null);
   const {scrollYProgress} = useScroll({
     target: sectionRef,
@@ -51,7 +51,12 @@ export function TaglineReveal() {
     >
       <p className="text-balance max-w-2xl font-mono text-4xl font-semibold sm:text-5xl lg:text-6xl">
         {words.map((word, index) => (
-          <RevealWord key={word.id} progress={scrollYProgress} index={index} />
+          <RevealWord
+            key={word.id}
+            progress={scrollYProgress}
+            words={words}
+            index={index}
+          />
         ))}
       </p>
     </section>

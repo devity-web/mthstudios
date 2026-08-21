@@ -23,8 +23,9 @@ export function Footer() {
                   height={28}
                 />
               </span>
-              <span className="font-mono text-base font-semibold">
-                MTH / STUDIO
+              <span className="text-sm font-semibold tracking-tight">
+                MTH/
+                <span className="font-normal text-muted/70">STUDIO</span>
               </span>
             </a>
             <p className="text-pretty text-sm text-primary-foreground/70">
@@ -37,9 +38,7 @@ export function Footer() {
             <h2 className="font-mono text-sm font-semibold">Local address</h2>
             <p className="flex items-start gap-2 text-sm text-primary-foreground/70">
               <MapPinIcon className="mt-0.5 size-4 shrink-0 text-accent" />
-              Lisbon, Portugal
-              <br />
-              Studio visits by appointment
+              Leiria, Portugal
             </p>
           </div>
 
@@ -47,7 +46,7 @@ export function Footer() {
             <h2 className="font-mono text-sm font-semibold">Service radius</h2>
             <p className="flex items-start gap-2 text-sm text-primary-foreground/70">
               <RadarIcon className="mt-0.5 size-4 shrink-0 text-accent" />
-              Greater Lisbon and remote projects across Portugal
+              Remote projects across Portugal
             </p>
           </div>
 
@@ -57,7 +56,7 @@ export function Footer() {
               <Clock3Icon className="mt-0.5 size-4 shrink-0 text-accent" />
               Monday to Friday
               <br />
-              09:00 to 18:00 Lisbon time
+              09:00 to 18:00
             </p>
           </div>
         </div>

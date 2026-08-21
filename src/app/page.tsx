@@ -5,13 +5,17 @@ import {Footer} from '@/components/landing/footer';
 import {Header} from '@/components/landing/header';
 import {HeroSection} from '@/components/landing/hero-section';
 import {LeadFormSection} from '@/components/landing/lead-form-section';
-import {LocalAdvantage} from '@/components/landing/local-advantage';
 import {OrganicBackdrop} from '@/components/landing/organic-backdrop';
 import {ProcessSection} from '@/components/landing/process-section';
 import {ServicesGrid} from '@/components/landing/services-grid';
 import {TaglineReveal} from '@/components/landing/tagline-reveal';
 import {Testimonials} from '@/components/landing/testimonials';
 import {TrustStrip} from '@/components/landing/trust-strip';
+
+const tagLine =
+  'Turn local attention into booked work, then give your team better tools to deliver it.'
+    .split(' ')
+    .map((word, id) => ({id: `${id + 1}-${word}`, word}));
 
 export default function Page() {
   return (
@@ -24,13 +28,12 @@ export default function Page() {
       </a>
       <OrganicBackdrop />
       <Header />
-      <main id="main-content" className="pt-20">
+      <main id="main-content">
         <HeroSection />
         <TrustStrip />
         <ServicesGrid />
         <ProcessSection />
-        <LocalAdvantage />
-        <TaglineReveal />
+        <TaglineReveal words={tagLine} />
         <Testimonials />
         <FaqSection />
         <LeadFormSection />
