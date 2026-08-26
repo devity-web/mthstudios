@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-26T13:55:20Z",
+  "title": "Design System: MTH Studio",
+  "extensions": {
+    "colorMeta": {
+      "morning-mist": {"role": "neutral", "displayName": "Morning Mist", "canonical": "#f3f6f2", "tonalRamp": ["oklch(15% 0.01 145)", "oklch(27% 0.01 145)", "oklch(39% 0.01 145)", "oklch(51% 0.01 145)", "oklch(63% 0.01 145)", "oklch(75% 0.01 145)", "oklch(87% 0.01 145)", "oklch(95% 0.01 145)"]},
+      "evergreen-ink": {"role": "neutral", "displayName": "Evergreen Ink", "canonical": "#15211c", "tonalRamp": ["oklch(15% 0.03 160)", "oklch(27% 0.04 160)", "oklch(39% 0.04 160)", "oklch(51% 0.04 160)", "oklch(63% 0.035 160)", "oklch(75% 0.03 160)", "oklch(87% 0.02 160)", "oklch(95% 0.01 160)"]},
+      "studio-pine": {"role": "primary", "displayName": "Studio Pine", "canonical": "#153d33", "tonalRamp": ["oklch(15% 0.06 165)", "oklch(27% 0.07 165)", "oklch(39% 0.07 165)", "oklch(51% 0.065 165)", "oklch(63% 0.055 165)", "oklch(75% 0.045 165)", "oklch(87% 0.025 165)", "oklch(95% 0.012 165)"]},
+      "porcelain": {"role": "neutral", "displayName": "Porcelain", "canonical": "#f8fbf9", "tonalRamp": ["oklch(15% 0.008 155)", "oklch(27% 0.008 155)", "oklch(39% 0.008 155)", "oklch(51% 0.008 155)", "oklch(63% 0.008 155)", "oklch(75% 0.008 155)", "oklch(87% 0.008 155)", "oklch(95% 0.008 155)"]},
+      "glass-white": {"role": "neutral", "displayName": "Glass White", "canonical": "rgb(255 255 255 / 0.58)", "tonalRamp": ["oklch(15% 0 0 / 0.58)", "oklch(27% 0 0 / 0.58)", "oklch(39% 0 0 / 0.58)", "oklch(51% 0 0 / 0.58)", "oklch(63% 0 0 / 0.58)", "oklch(75% 0 0 / 0.58)", "oklch(87% 0 0 / 0.58)", "oklch(95% 0 0 / 0.58)"]},
+      "soft-sage": {"role": "secondary", "displayName": "Soft Sage", "canonical": "#dfe9e3", "tonalRamp": ["oklch(15% 0.025 155)", "oklch(27% 0.03 155)", "oklch(39% 0.035 155)", "oklch(51% 0.035 155)", "oklch(63% 0.03 155)", "oklch(75% 0.025 155)", "oklch(87% 0.02 155)", "oklch(95% 0.01 155)"]},
+      "quiet-stone": {"role": "neutral", "displayName": "Quiet Stone", "canonical": "#e4eae6", "tonalRamp": ["oklch(15% 0.012 155)", "oklch(27% 0.014 155)", "oklch(39% 0.016 155)", "oklch(51% 0.016 155)", "oklch(63% 0.014 155)", "oklch(75% 0.012 155)", "oklch(87% 0.01 155)", "oklch(95% 0.006 155)"]},
+      "weathered-leaf": {"role": "neutral", "displayName": "Weathered Leaf", "canonical": "#5b6b64", "tonalRamp": ["oklch(15% 0.025 160)", "oklch(27% 0.03 160)", "oklch(39% 0.032 160)", "oklch(51% 0.03 160)", "oklch(63% 0.026 160)", "oklch(75% 0.02 160)", "oklch(87% 0.014 160)", "oklch(95% 0.007 160)"]},
+      "electric-sprout": {"role": "primary", "displayName": "Electric Sprout", "canonical": "#caff79", "tonalRamp": ["oklch(15% 0.12 125)", "oklch(27% 0.16 125)", "oklch(39% 0.2 125)", "oklch(51% 0.23 125)", "oklch(63% 0.24 125)", "oklch(75% 0.22 125)", "oklch(87% 0.16 125)", "oklch(95% 0.08 125)"]},
+      "deep-sprout": {"role": "neutral", "displayName": "Deep Sprout", "canonical": "#163128", "tonalRamp": ["oklch(15% 0.045 160)", "oklch(27% 0.055 160)", "oklch(39% 0.06 160)", "oklch(51% 0.055 160)", "oklch(63% 0.045 160)", "oklch(75% 0.035 160)", "oklch(87% 0.02 160)", "oklch(95% 0.01 160)"]},
+      "focus-fern": {"role": "secondary", "displayName": "Focus Fern", "canonical": "#4b806e", "tonalRamp": ["oklch(15% 0.05 165)", "oklch(27% 0.065 165)", "oklch(39% 0.075 165)", "oklch(51% 0.075 165)", "oklch(63% 0.065 165)", "oklch(75% 0.05 165)", "oklch(87% 0.03 165)", "oklch(95% 0.015 165)"]},
+      "soft-moss": {"role": "secondary", "displayName": "Soft Moss", "canonical": "#8da579", "tonalRamp": ["oklch(15% 0.055 125)", "oklch(27% 0.07 125)", "oklch(39% 0.085 125)", "oklch(51% 0.09 125)", "oklch(63% 0.085 125)", "oklch(75% 0.065 125)", "oklch(87% 0.04 125)", "oklch(95% 0.02 125)"]},
+      "vapor-mint": {"role": "secondary", "displayName": "Vapor Mint", "canonical": "#d5e7df", "tonalRamp": ["oklch(15% 0.035 160)", "oklch(27% 0.045 160)", "oklch(39% 0.05 160)", "oklch(51% 0.05 160)", "oklch(63% 0.045 160)", "oklch(75% 0.035 160)", "oklch(87% 0.025 160)", "oklch(95% 0.012 160)"]},
+      "warm-clay": {"role": "tertiary", "displayName": "Warm Clay", "canonical": "#de8a61", "tonalRamp": ["oklch(15% 0.08 45)", "oklch(27% 0.11 45)", "oklch(39% 0.14 45)", "oklch(51% 0.16 45)", "oklch(63% 0.16 45)", "oklch(75% 0.13 45)", "oklch(87% 0.08 45)", "oklch(95% 0.04 45)"]},
+      "signal-red": {"role": "tertiary", "displayName": "Signal Red", "canonical": "#ad3837", "tonalRamp": ["oklch(15% 0.09 25)", "oklch(27% 0.14 25)", "oklch(39% 0.18 25)", "oklch(51% 0.19 25)", "oklch(63% 0.17 25)", "oklch(75% 0.12 25)", "oklch(87% 0.07 25)", "oklch(95% 0.03 25)"]}
+    },
+    "typographyMeta": {
+      "display": {"displayName": "Display", "purpose": "Hero statements and rare cinematic typographic moments."},
+      "headline": {"displayName": "Headline", "purpose": "Section-level hierarchy in Geist Mono."},
+      "title": {"displayName": "Title", "purpose": "Cards, process steps, and substantial component titles."},
+      "body": {"displayName": "Body", "purpose": "Default readable interface and explanatory copy."},
+      "body-large": {"displayName": "Body Large", "purpose": "Section introductions and high-value explanations."},
+      "label": {"displayName": "Label", "purpose": "Buttons, navigation, metadata, and compact controls."}
+    },
+    "shadows": [
+      {"name": "ambient-glass", "value": "0 24px 80px rgb(21 33 28 / 0.12)", "purpose": "Broad environmental separation for glass surfaces."},
+      {"name": "control-rest", "value": "0 1px 2px rgb(0 0 0 / 0.05)", "purpose": "Restrained resting depth for accent controls."},
+      {"name": "control-hover", "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)", "purpose": "Brief tactile lift on hover."}
+    ],
+    "motion": [
+      {"name": "ease-organic", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Primary expressive easing for reveals, overlays, and tactile state changes."},
+      {"name": "duration-state", "value": "700ms", "purpose": "Unhurried interactive transitions."},
+      {"name": "duration-reveal", "value": "900ms", "purpose": "Section and hero entrances."}
+    ],
+    "breakpoints": [
+      {"name": "sm", "value": "640px"},
+      {"name": "md", "value": "768px"},
+      {"name": "lg", "value": "1024px"},
+      {"name": "2xl", "value": "1536px"}
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The grounded default action for utility and structural decisions.",
+      "html": "<button class=\"ds-btn-primary\">Start a project <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary{height:2.5rem;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.5rem .75rem;border:1px solid transparent;border-radius:var(--radius, .75rem);background:var(--primary, #153d33);color:var(--primary-foreground, #f8fbf9);font:600 1rem/1.25 var(--font-geist, sans-serif);transition:all 700ms cubic-bezier(.32,.72,0,1)}.ds-btn-primary:hover{transform:translateY(-2px);background:color-mix(in oklch,var(--primary, #153d33),transparent 20%)}.ds-btn-primary:focus-visible{outline:none;border-color:var(--ring,#4b806e);box-shadow:0 0 0 3px color-mix(in srgb,var(--ring,#4b806e) 50%,transparent)}.ds-btn-primary:active{transform:scale(.98)}"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "The clearest next action, used once per decision context.",
+      "html": "<button class=\"ds-btn-accent\">Request a quote <span aria-hidden=\"true\">↗</span></button>",
+      "css": ".ds-btn-accent{height:2.5rem;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.5rem .75rem;border:1px solid transparent;border-radius:var(--radius,.75rem);background:var(--accent,#caff79);color:var(--accent-foreground,#163128);box-shadow:0 1px 2px rgb(0 0 0/.05);font:600 1rem/1.25 var(--font-geist,sans-serif);transition:all 700ms cubic-bezier(.32,.72,0,1)}.ds-btn-accent:hover{transform:translateY(-2px);background:color-mix(in oklch,var(--accent,#caff79),transparent 20%);box-shadow:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1)}.ds-btn-accent:focus-visible{outline:none;border-color:var(--ring,#4b806e);box-shadow:0 0 0 3px color-mix(in srgb,var(--ring,#4b806e) 50%,transparent)}.ds-btn-accent:active{transform:scale(.98)}"
+    },
+    {
+      "name": "Outline Badge",
+      "kind": "chip",
+      "refersTo": "badge-outline",
+      "description": "A compact technical label for services, tools, and section eyebrows.",
+      "html": "<span class=\"ds-badge\">Local discovery</span>",
+      "css": ".ds-badge{height:1.25rem;display:inline-flex;align-items:center;padding:.125rem .5rem;border:1px solid rgb(21 61 51/.14);border-radius:9999px;color:var(--foreground,#15211c);font:500 .75rem/1 var(--font-geist,sans-serif);white-space:nowrap}.ds-badge:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--ring,#4b806e) 50%,transparent)}"
+    },
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "The primary content container, keeping the environmental background visible.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-card-kicker\">Outcome</span><h3>Clearer working days</h3><p>Practical software shaped around the way the team already works.</p></article>",
+      "css": ".ds-card{max-width:22rem;padding:1.5rem;border:1px solid rgb(21 61 51/.14);border-radius:1.05rem;background:rgb(255 255 255/.7);color:var(--foreground,#15211c);box-shadow:0 24px 80px rgb(21 33 28/.12);backdrop-filter:blur(24px);font-family:var(--font-geist,sans-serif);transition:transform 700ms cubic-bezier(.32,.72,0,1)}.ds-card:hover{transform:translateY(-8px)}.ds-card h3{margin:.75rem 0 .5rem;font:600 1.25rem/1.375 var(--font-geist-mono,monospace)}.ds-card p{margin:0;color:var(--muted-foreground,#5b6b64);line-height:1.5}.ds-card-kicker{font-size:.75rem;font-weight:600;color:var(--primary,#153d33)}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "A calm, legible field with explicit focus and validation states.",
+      "html": "<label class=\"ds-field\">Project name<input class=\"ds-input\" placeholder=\"Your project\"></label>",
+      "css": ".ds-field{display:grid;gap:.5rem;color:var(--foreground,#15211c);font:600 .875rem/1.25 var(--font-geist,sans-serif)}.ds-input{height:2.5rem;padding:.5rem .75rem;border:1px solid rgb(21 61 51/.2);border-radius:var(--radius,.75rem);background:rgb(243 246 242/.6);color:var(--foreground,#15211c);font:400 1rem/1.5 var(--font-geist,sans-serif);transition:all 700ms cubic-bezier(.32,.72,0,1)}.ds-input::placeholder{color:var(--muted-foreground,#5b6b64)}.ds-input:focus-visible{outline:none;border-color:var(--ring,#4b806e);box-shadow:0 0 0 3px color-mix(in srgb,var(--ring,#4b806e) 50%,transparent)}.ds-input:disabled{opacity:.5;background:rgb(21 61 51/.1)}"
+    },
+    {
+      "name": "Floating Navigation",
+      "kind": "nav",
+      "description": "A compact glass pill that balances brand, quiet links, and one accent action.",
+      "html": "<nav class=\"ds-nav\"><strong>MTH/<span>STUDIO</span></strong><a href=\"#services\">Services</a><a class=\"ds-nav-cta\" href=\"#contact\">Contact us ↗</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.5rem .75rem;border:1px solid rgb(255 255 255/.7);border-radius:9999px;background:rgb(255 255 255/.55);color:var(--foreground,#15211c);box-shadow:0 24px 80px rgb(21 33 28/.12);backdrop-filter:blur(24px);font:500 .875rem/1.25 var(--font-geist,sans-serif)}.ds-nav strong span{font-weight:400;opacity:.7}.ds-nav a{padding:.5rem .75rem;border-radius:9999px;color:var(--muted-foreground,#5b6b64);text-decoration:none;transition:all 700ms cubic-bezier(.32,.72,0,1)}.ds-nav a:hover{background:var(--secondary,#dfe9e3);color:var(--foreground,#15211c)}.ds-nav a:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--ring,#4b806e) 50%,transparent)}.ds-nav .ds-nav-cta{background:var(--accent,#caff79);color:var(--accent-foreground,#163128);font-weight:600}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Digital Greenhouse",
+    "overview": "MTH Studio's interface is a cultivated technical environment: transparent enough to feel understandable, structured enough to feel capable, and softened by an organic palette and slow atmospheric movement. The system combines the clarity of a digital workshop with the ease of a garden—calm, precise, practical, warm, trustworthy, and quietly bold.\n\nThe composition is spacious and optimistic rather than corporate or clinical. Dense green anchors the work, electric chartreuse creates decisive moments, and translucent surfaces let the pale environmental color remain present. Technical credibility comes through mono display type, exact grids, and explicit process language; approachability comes through rounded forms, natural imagery, blurred organic shapes, and unhurried motion.",
+    "keyCharacteristics": [
+      "Deep evergreen structure against pale botanical backgrounds.",
+      "Electric chartreuse reserved for high-value emphasis and action.",
+      "Geist Mono for expressive hierarchy; Geist Sans for effortless reading.",
+      "Frosted, softly bordered surfaces with ambient rather than dramatic depth.",
+      "Spacious section rhythm, rounded geometry, and slow organic motion.",
+      "Direct, practical visual communication with visible technical competence."
+    ],
+    "rules": [
+      {"name": "The Living Accent Rule", "body": "Electric Sprout marks a decision, a result, or a purposeful highlight; it is not a general-purpose section background.", "section": "colors"},
+      {"name": "The Botanical Neutral Rule", "body": "Prefer Morning Mist, sage, translucent white, and evergreen-tinted borders over stark white, neutral gray, or pure black.", "section": "colors"},
+      {"name": "The Engineered Headline Rule", "body": "Mono type carries the product's technical confidence at display, section-heading, and card-title levels; long explanatory copy remains sans-serif.", "section": "typography"},
+      {"name": "The Ambient Layer Rule", "body": "Shadows describe atmosphere, not stacked application chrome; use translucent fill and border contrast before adding elevation.", "section": "elevation"}
+    ],
+    "dos": [
+      "Do use Studio Pine for structural confidence and Electric Sprout for the one action or phrase that should command attention.",
+      "Do pair mono headlines with readable sans-serif explanations.",
+      "Do keep translucent surfaces visibly connected to the environmental background.",
+      "Do use spacious section rhythm and constrained text widths to make the offer easy to scan.",
+      "Do preserve clear hover, focus, error, disabled, and reduced-motion states.",
+      "Do use real project imagery and approved MTH Studio brand assets where evidence is required."
+    ],
+    "donts": [
+      "Don't spread Electric Sprout across large passive surfaces or multiple competing actions.",
+      "Don't introduce pure black, stark white, or generic neutral-gray UI where botanical neutrals already serve the role.",
+      "Don't use heavy, tight shadows or stack many elevation tiers.",
+      "Don't set long paragraphs in Geist Mono.",
+      "Don't add fast, bouncy, or ornamental motion that competes with the slow atmospheric cadence.",
+      "Don't fabricate testimonials, customer logos, performance data, or other proof."
+    ]
+  }
+}
