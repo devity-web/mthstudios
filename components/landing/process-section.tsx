@@ -11,20 +11,20 @@ const steps = [
   {
     number: '01',
     icon: CompassIcon,
-    title: 'Local discovery',
-    copy: 'We learn how customers find you, what your team needs, and where the current process loses momentum.',
+    title: 'Understand the real workflow',
+    copy: 'We learn what customers need, how your team works, and where time or opportunities are being lost.',
   },
   {
     number: '02',
     icon: HammerIcon,
-    title: 'Focused build',
-    copy: 'You see working screens early. We refine the words, flow, and details around real customer decisions.',
+    title: 'Build the useful core',
+    copy: 'You see working screens early, so decisions happen around the real experience instead of a long specification.',
   },
   {
     number: '03',
     icon: RocketIcon,
-    title: 'Measured launch',
-    copy: 'We test on real devices, prepare your team, and track the signals that show whether the work is paying off.',
+    title: 'Launch with confidence',
+    copy: 'We test on real devices, prepare your team, and make sure the finished work is ready for everyday use.',
   },
 ];
 
@@ -34,8 +34,8 @@ export function ProcessSection() {
       <Reveal>
         <SectionHeading
           eyebrow="How it works"
-          title="A clear route from first conversation to a useful launch."
-          description="No mystery phases and no giant handoff document. You always know what is moving and what comes next."
+          title="See progress early. Make decisions with context."
+          description="You work directly with senior practitioners, see the product take shape, and always know what comes next."
           align="center"
         />
       </Reveal>
@@ -53,7 +53,7 @@ export function ProcessSection() {
                     </Badge>
                     <Icon className="size-6" />
                   </div>
-                  <CardTitle className="font-mono text-xl font-semibold">
+                  <CardTitle className="text-xl font-semibold">
                     {step.title}
                   </CardTitle>
                 </CardHeader>

@@ -29,8 +29,7 @@ export function Footer() {
               </span>
             </a>
             <p className="text-pretty text-sm text-primary-foreground/70">
-              Websites and software for local teams who take pride in useful
-              work.
+              Websites that win attention. Software that makes the work easier.
             </p>
           </div>
 

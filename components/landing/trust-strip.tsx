@@ -5,7 +5,12 @@ import {CheckCircle2Icon, ShieldCheckIcon} from 'lucide-react';
 import {Reveal} from '@/components/landing/reveal';
 import {Badge} from '@/components/ui/badge';
 
-const partners = ['Next.js', 'Vercel', 'Supabase', 'Stripe', 'Google Business'];
+const assurances = [
+  'Direct senior involvement',
+  'Working screens early',
+  'Focused websites in four to six weeks',
+  'Projects across Portugal',
+];
 
 export function TrustStrip() {
   return (
@@ -16,19 +21,20 @@ export function TrustStrip() {
             <ShieldCheckIcon className="size-5 text-primary" />
           </span>
           <div>
-            <p className="font-mono text-sm font-semibold">
-              Reliable tools, chosen with care
+            <p className="text-sm font-semibold">
+              One studio from first click to daily operations
             </p>
             <p className="text-sm text-muted-foreground">
-              A modern stack without unnecessary complexity.
+              Strategy, design, and development stay connected from discovery to
+              launch.
             </p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2">
-          {partners.map(partner => (
-            <Badge key={partner} variant="outline">
+          {assurances.map(assurance => (
+            <Badge key={assurance} variant="outline">
               <CheckCircle2Icon data-icon="inline-start" />
-              {partner}
+              {assurance}
             </Badge>
           ))}
         </div>

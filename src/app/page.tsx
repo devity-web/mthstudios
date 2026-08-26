@@ -14,7 +14,7 @@ import {TaglineReveal} from '@/components/landing/tagline-reveal';
 import {TrustStrip} from '@/components/landing/trust-strip';
 
 const tagLine =
-  'Turn local attention into booked work, then give your team better tools to deliver it.'
+  'Bring in better opportunities. Give your team better ways to deliver them.'
     .split(' ')
     .map((word, id) => ({id: `${id + 1}-${word}`, word}));
 

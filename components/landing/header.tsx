@@ -10,8 +10,8 @@ import {cn} from '@/lib/utils';
 
 const links = [
   {label: 'Services', href: '#services'},
-  {label: 'Ways of work', href: '#process'},
-  {label: 'Our projects', href: '#projects'},
+  {label: 'How we work', href: '#process'},
+  {label: 'Selected work', href: '#projects'},
   // {label: 'Reviews', href: '#reviews'},
 ];
 
@@ -67,7 +67,7 @@ export function Header() {
             'hidden rounded-full md:inline-flex',
           )}
         >
-          Contact us
+          Discuss a project
           <ArrowUpRightIcon data-icon="inline-end" />
         </a>
 
@@ -137,7 +137,7 @@ export function Header() {
                   href="#contact"
                   className={buttonVariants({variant: 'accent', size: 'xl'})}
                 >
-                  Request a local quote
+                  Discuss your project
                   <ArrowUpRightIcon data-icon="inline-end" />
                 </a>
               </motion.div>

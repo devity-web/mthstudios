@@ -1,6 +1,5 @@
 'use client';
 
-import {Badge} from '@/components/ui/badge';
 import {cn} from '@/lib/utils';
 
 type SectionHeadingProps = {
@@ -12,7 +11,6 @@ type SectionHeadingProps = {
 };
 
 export function SectionHeading({
-  eyebrow,
   title,
   description,
   align = 'left',
@@ -25,9 +23,6 @@ export function SectionHeading({
         align === 'center' && 'mx-auto items-center text-center',
       )}
     >
-      <Badge variant={tone === 'inverse' ? 'secondary' : 'outline'}>
-        {eyebrow}
-      </Badge>
       <h2
         className={cn(
           'text-balance font-mono text-3xl font-semibold sm:text-4xl',

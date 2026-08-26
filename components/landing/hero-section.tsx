@@ -1,70 +1,79 @@
 'use client';
 
 import {motion, useReducedMotion} from 'framer-motion';
-import Image from 'next/image';
+import {ArrowRightIcon, ArrowUpRightIcon} from 'lucide-react';
+import {useEffect, useRef} from 'react';
+
+import {buttonVariants} from '@/components/ui/button';
+import {cn} from '@/lib/utils';
+import Velaris from '../velaris';
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    if (shouldReduceMotion) {
+      video.pause();
+      return;
+    }
+
+    void video.play().catch(() => undefined);
+  }, [shouldReduceMotion]);
 
   return (
     <section className="relative isolate flex min-h-svh items-center justify-center overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
-      <motion.div
-        aria-hidden="true"
-        className="absolute -inset-10"
-        initial={false}
-        animate={
-          shouldReduceMotion
-            ? {scale: 1.04}
-            : {
-                scale: [1.04, 1.12, 1.06],
-                x: ['0%', '-1.5%', '1%'],
-                y: ['0%', '1%', '-1%'],
-              }
-        }
-        transition={
-          shouldReduceMotion
-            ? {duration: 0}
-            : {
-                duration: 18,
-                ease: [0.32, 0.72, 0, 1],
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: 'mirror',
-              }
-        }
-      >
-        <Image
-          src="/images/clouds-hero.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-      </motion.div>
-
-      <div className="absolute inset-0 bg-primary/35" aria-hidden="true" />
-
-      <motion.div
-        className="relative z-10 flex w-full flex-col items-center gap-6 text-center"
-        initial={
-          shouldReduceMotion ? false : {opacity: 0, y: 48, filter: 'blur(12px)'}
-        }
-        animate={{opacity: 1, y: 0, filter: 'blur(0px)'}}
-        transition={{duration: 0.9, ease: [0.32, 0.72, 0, 1]}}
-      >
-        <h1 className="text-balance text-7xl sm:text-8xl max-w-7xl leading-[0.82] tracking-tighter font-mono font-semibold text-white 2xl:max-w-none">
-          <span className="md:block">Websites that </span>
-          <span className="md:block">keep local business </span>
-          <span className="mt-2 inline-block bg-accent px-2 py-1 text-accent-foreground sm:px-4 sm:py-2 lg:px-6 lg:py-3 2xl:py-6">
-            teams booked.
-          </span>
-        </h1>
-        <p className="text-pretty max-w-[680px] text-lg text-white/85 sm:text-xl">
-          We design and build fast websites, quote journeys, and practical
-          software for home service businesses that want more calls and less
-          admin.
-        </p>
-      </motion.div>
+      <Velaris height="100vh" className="absolute" grain={0.5}>
+        <motion.div
+          className="flex items-center justify-center flex-col h-full gap-3.5"
+          initial={
+            shouldReduceMotion
+              ? false
+              : {opacity: 0, y: 48, filter: 'blur(12px)'}
+          }
+          animate={{opacity: 1, y: 0, filter: 'blur(0px)'}}
+          transition={{duration: 0.9, ease: [0.32, 0.72, 0, 1]}}
+        >
+          <h1 className="text-center text-7xl sm:text-8xl max-w-7xl font-mono font-semibold text-white 2xl:max-w-none">
+            <span className="md:block">Win more business. </span>
+            Waste less time.
+          </h1>
+          <p className="text-center max-w-170 text-lg text-white/85 sm:text-xl">
+            MTH Studio designs websites customers understand and software teams
+            can use every day, for businesses across Portugal.
+          </p>
+          <div className="flex flex-col items-center gap-3 sm:flex-row">
+            <a
+              href="#contact"
+              className={cn(
+                buttonVariants({variant: 'accent', size: 'xl'}),
+                'rounded-full',
+              )}
+            >
+              Discuss your project
+              <ArrowRightIcon data-icon="inline-end" />
+            </a>
+            <a
+              href="#projects"
+              className={cn(
+                buttonVariants({variant: 'outline', size: 'xl'}),
+                'rounded-full border-white/40 bg-white/10 text-white backdrop-blur-xl hover:bg-white/20 hover:text-white',
+              )}
+            >
+              See selected work
+              <ArrowUpRightIcon data-icon="inline-end" />
+            </a>
+          </div>
+          <p className="text-sm font-medium text-white/75">
+            Based in Leiria · Projects across Portugal · Reply within one
+            business day
+          </p>
+        </motion.div>
+      </Velaris>
     </section>
   );
 }

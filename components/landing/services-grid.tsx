@@ -23,50 +23,50 @@ import {
 const services = [
   {
     icon: SearchCheckIcon,
-    title: 'Local websites',
+    title: 'Websites and landing pages',
     description:
-      'Fast, search ready sites that make your work clear and turn nearby visitors into real enquiries.',
-    outcome: 'More qualified calls',
+      'Make your offer easy to understand, easy to trust, and easy to act on.',
+    outcome: 'Turn visits into qualified enquiries',
     technology: ['Next.js', 'Local SEO'],
   },
   {
     icon: CalendarRangeIcon,
     title: 'Quote and booking flows',
     description:
-      'Simple journeys that collect the right job details before your team picks up the phone.',
-    outcome: 'Less time chasing details',
+      'Collect the details your team needs before the first call, visit, or appointment.',
+    outcome: 'Spend less time chasing context',
     technology: ['Forms', 'Calendars'],
   },
   {
     icon: LayoutDashboardIcon,
     title: 'Operations dashboards',
     description:
-      'One practical view for jobs, customers, availability, and the numbers you use every week.',
-    outcome: 'A clearer working day',
+      'Bring customers, work, availability, and useful numbers into one practical view.',
+    outcome: 'See what needs attention next',
     technology: ['Supabase', 'Analytics'],
   },
   {
     icon: BotIcon,
     title: 'CRM and automation',
     description:
-      'Connect enquiries, reminders, and follow up so fewer good leads disappear between tools.',
-    outcome: 'Faster customer replies',
+      'Route enquiries, send reminders, and keep follow up moving between the tools you use.',
+    outcome: 'Respond while interest is still warm',
     technology: ['HubSpot', 'Webhooks'],
   },
   {
     icon: WrenchIcon,
     title: 'Custom client portals',
     description:
-      'Give customers a calm place to approve work, view progress, and keep documents together.',
-    outcome: 'A more professional service',
+      'Give customers one calm place to approve work, follow progress, and find documents.',
+    outcome: 'Keep every project moving',
     technology: ['React', 'Stripe'],
   },
   {
     icon: GaugeIcon,
     title: 'Care and optimisation',
     description:
-      'Ongoing improvements to speed, accessibility, search visibility, and conversion performance.',
-    outcome: 'A site that keeps improving',
+      'Keep improving speed, accessibility, search visibility, and the journeys that matter.',
+    outcome: 'Protect the value of your website',
     technology: ['Vercel', 'Core Web Vitals'],
   },
 ];
@@ -80,8 +80,8 @@ export function ServicesGrid() {
       <Reveal>
         <SectionHeading
           eyebrow="Services"
-          title="Digital tools built around the way your crew actually works."
-          description="From the first search to the final invoice, we remove friction from the moments that win jobs and keep customers informed."
+          title="Fix the digital gaps that cost you time and opportunities."
+          description="Start with the part that causes the most friction. We can improve the customer journey, the work behind it, or both."
         />
       </Reveal>
 
@@ -99,7 +99,7 @@ export function ServicesGrid() {
                   <span className="mb-4 flex size-12 items-center justify-center rounded-xl bg-secondary text-primary">
                     <Icon className="size-6" />
                   </span>
-                  <CardTitle className="font-mono text-xl font-semibold">
+                  <CardTitle className="text-xl font-semibold">
                     {service.title}
                   </CardTitle>
                   <CardDescription className="text-pretty text-base">

@@ -1,37 +1,38 @@
 import type {Metadata} from 'next';
-import {Geist, Geist_Mono} from 'next/font/google';
+import {Geist, Instrument_Serif} from 'next/font/google';
 
 import './globals.css';
 import {Analytics} from '@vercel/analytics/next';
 
 const geist = Geist({subsets: ['latin'], variable: '--font-geist'});
-const geistMono = Geist_Mono({
+const instrumentMono = Instrument_Serif({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-instrument-mono',
+  weight: '400'
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   ),
-  title: 'Software studio for businesses | MTH Studio',
+  title: 'Website design and custom software in Portugal | MTH Studio',
   description:
-    'MTH Studio designs and builds websites, booking flows, and custom software for local home service businesses in Lisbon and across Portugal.',
+    'MTH Studio designs websites and custom software for businesses across Portugal. Win better opportunities and reduce repetitive admin.',
   keywords: [
-    'Lisbon software studio',
-    'Leiria software',
-    'home service website design',
-    'local business software',
-    'booking website development',
+    'software studio Portugal',
+    'website design Portugal',
+    'web design Leiria',
+    'custom software Portugal',
+    'business website development',
     'empresa criar site',
     'criar landing page',
     'landing page',
     'agencia em leiria',
   ],
   openGraph: {
-    title: 'Websites that keep local service teams booked',
+    title: 'Win more business. Waste less time.',
     description:
-      'Local strategy, design, and development for service businesses ready to turn more visits into real jobs.',
+      'Websites and custom software for businesses across Portugal that want better opportunities and less repetitive admin.',
     images: [
       {
         url: '/og.png',
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MTH Studio for businesses',
     description:
-      'Websites and software designed to turn local demand into booked work.',
+      'Websites customers understand and software teams can use every day.',
     images: ['/og.png'],
   },
 };
@@ -56,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${geistMono.variable}`}
+      className={`${geist.variable} ${instrumentMono.variable}`}
       suppressHydrationWarning
     >
       <body>{children}</body>

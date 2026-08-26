@@ -13,27 +13,27 @@ import {Card, CardContent} from '@/components/ui/card';
 const questions = [
   {
     value: 'fit',
-    question: 'What kind of service business is the best fit?',
+    question: 'What kind of project is a good fit?',
     answer:
-      'We work best with established local teams in home care, maintenance, trades, cleaning, landscaping, and related services. The strongest projects start with a clear service offer and a genuine need for better enquiries or operations.',
+      'We work best with businesses and organizations that have a clear offer and a real need for a stronger website, a smoother customer journey, or more useful operational software.',
   },
   {
     value: 'timeline',
     question: 'How long does a typical project take?',
     answer:
-      'A focused service website usually takes four to six weeks. A custom portal or operations tool can take longer. We confirm the scope, milestones, and decision points before work begins.',
+      'A focused business website usually takes four to six weeks. Custom portals and operations tools can take longer. We confirm the scope, milestones, and decision points before work begins.',
   },
   {
     value: 'content',
     question: 'Can you help with the words and structure?',
     answer:
-      'Yes. We shape the message, page flow, and calls to action around the questions your customers ask before they book. You bring the service knowledge and we turn it into clear digital content.',
+      'Yes. You bring the business knowledge. We shape the message, page flow, and calls to action around the questions customers ask before they choose you.',
   },
   {
     value: 'tools',
     question: 'Can you connect our existing tools?',
     answer:
-      'Usually. We can connect common calendars, forms, payment services, analytics, and customer systems. We check the technical fit during discovery before promising an integration.',
+      'Often. We can connect common calendars, forms, payment services, analytics, and customer systems. We check the technical fit during discovery before promising an integration.',
   },
   {
     value: 'ownership',
@@ -43,7 +43,7 @@ const questions = [
   },
   {
     value: 'first-call',
-    question: 'What happens after we request a quote?',
+    question: 'What happens after I share my project?',
     answer:
       'We review your details and reply within one business day. If there is a good fit, we arrange a free conversation with no obligation and send a clear written recommendation after it.',
   },
@@ -56,8 +56,8 @@ export function FaqSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Questions"
-            title="Useful answers before the first call."
-            description="If your question is more specific, add it to the quote form and we will answer it directly."
+            title="Know what to expect before we speak."
+            description="These are the questions that usually matter before a project begins."
           />
         </Reveal>
         <Reveal delay={0.1}>
@@ -66,7 +66,7 @@ export function FaqSection() {
               <Accordion defaultValue={['fit']}>
                 {questions.map(item => (
                   <AccordionItem key={item.value} value={item.value}>
-                    <AccordionTrigger className="font-mono text-base font-semibold">
+                    <AccordionTrigger className="text-base font-semibold">
                       {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-pretty text-base text-muted-foreground">

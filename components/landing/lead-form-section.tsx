@@ -5,7 +5,6 @@ import type {FormEvent} from 'react';
 import {useState} from 'react';
 
 import {Reveal} from '@/components/landing/reveal';
-import {Badge} from '@/components/ui/badge';
 import {Button} from '@/components/ui/button';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Field, FieldError, FieldGroup, FieldLabel} from '@/components/ui/field';
@@ -23,7 +22,7 @@ import {Textarea} from '@/components/ui/textarea';
 
 const serviceOptions = [
   {label: 'Choose a service', value: null},
-  {label: 'Local website', value: 'website'},
+  {label: 'Website or landing page', value: 'website'},
   {label: 'Quote or booking flow', value: 'booking'},
   {label: 'Dashboard or portal', value: 'dashboard'},
   {label: 'CRM or automation', value: 'automation'},
@@ -73,14 +72,12 @@ export function LeadFormSection() {
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <Reveal>
             <div className="flex flex-col items-start gap-6">
-              <Badge variant="secondary">Start a project</Badge>
               <h2 className="text-balance font-mono text-3xl font-semibold sm:text-4xl">
-                Tell us what would make your working day better.
+                Tell us what needs to work better.
               </h2>
               <p className="text-pretty text-lg text-primary-foreground/70">
-                Share the rough shape of the project. We will reply with useful
-                next steps, even if the right answer is smaller than you
-                expected.
+                You do not need a finished brief. Share the problem, the goal,
+                and any constraints. We will reply with a practical next step.
               </p>
               <div className="flex flex-col gap-4 text-sm text-primary-foreground/80">
                 <p className="flex items-center gap-3">
@@ -103,22 +100,22 @@ export function LeadFormSection() {
                   </span>
                   <div className="flex flex-col gap-3">
                     <CardTitle className="font-mono text-2xl font-semibold">
-                      Your request is ready for review.
+                      Your project details are ready.
                     </CardTitle>
                     <p className="text-pretty text-muted-foreground">
-                      This local demo does not send data. Connect the form to
-                      your email or CRM before publishing.
+                      This prototype checks the form but does not send or store
+                      your information yet.
                     </p>
                   </div>
                   <Button type="button" variant="outline" onClick={resetForm}>
-                    Send another request
+                    Check another project
                   </Button>
                 </CardContent>
               ) : (
                 <form onSubmit={handleSubmit} noValidate>
                   <CardHeader>
-                    <CardTitle className="font-mono text-xl font-semibold">
-                      Request a local quote
+                    <CardTitle className="text-xl font-semibold mb-2">
+                      Describe your project
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -223,11 +220,11 @@ export function LeadFormSection() {
                         {status === 'submitting' ? (
                           <>
                             <Spinner data-icon="inline-start" />
-                            Preparing request
+                            Checking your details
                           </>
                         ) : (
                           <>
-                            Request my quote
+                            Check my project details
                             <ArrowRightIcon data-icon="inline-end" />
                           </>
                         )}
