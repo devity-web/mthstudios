@@ -2,28 +2,12 @@
 
 import {motion, useReducedMotion} from 'framer-motion';
 import {ArrowRightIcon, ArrowUpRightIcon} from 'lucide-react';
-import {useEffect, useRef} from 'react';
-
 import {buttonVariants} from '@/components/ui/button';
 import {cn} from '@/lib/utils';
 import Velaris from '../velaris';
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-
-    if (!video) return;
-
-    if (shouldReduceMotion) {
-      video.pause();
-      return;
-    }
-
-    void video.play().catch(() => undefined);
-  }, [shouldReduceMotion]);
 
   return (
     <section className="relative isolate flex min-h-svh items-center justify-center overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
