@@ -4,6 +4,7 @@ import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
+  useReducedMotion,
   useScroll,
 } from 'framer-motion';
 import {ArrowUpRightIcon} from 'lucide-react';
@@ -22,14 +23,13 @@ const links = [
 
 export function Header() {
   const {scrollY} = useScroll();
+  const shouldReduceMotion = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useMotionValueEvent(scrollY, 'change', latest => {
     setHasScrolled(latest > window.innerHeight);
   });
-
-  console.log(hasScrolled);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -40,12 +40,24 @@ export function Header() {
 
   return (
     <header className="section-shell fixed inset-x-0 top-0 z-50 pt-6">
-      <nav
+      <motion.nav
         aria-label="Primary navigation"
-        className={cn(
-          'relative z-50 mx-auto flex w-full max-w-5xl items-center justify-between rounded-full px-3 py-2 backdrop-blur-lg border shadow-lg',
-          `${hasScrolled ? 'bg-white/55 border-white/55' : 'bg-white/2.5 border-white/10'}`,
-        )}
+        className="relative z-50 mx-auto flex w-full max-w-5xl items-center justify-between rounded-full border px-3 py-2 backdrop-blur-lg"
+        animate={{
+          backgroundColor: hasScrolled
+            ? 'rgb(255 255 255 / 0.68)'
+            : 'rgb(255 255 255 / 0.03)',
+          borderColor: hasScrolled
+            ? 'rgb(255 255 255 / 0.72)'
+            : 'rgb(255 255 255 / 0.12)',
+          boxShadow: hasScrolled
+            ? '0 24px 80px rgb(21 33 28 / 0.12)'
+            : '0 12px 40px rgb(0 0 0 / 0.12)',
+        }}
+        transition={{
+          duration: shouldReduceMotion ? 0.16 : 0.38,
+          ease: [0.16, 1, 0.3, 1],
+        }}
       >
         <a
           href="#main-content"
@@ -129,16 +141,31 @@ export function Header() {
             )}
           />
         </Button>
-      </nav>
+      </motion.nav>
 
       <AnimatePresence>
         {open ? (
           <motion.div
             className="fixed inset-0 z-40 bg-background/90 px-4 pt-32 backdrop-blur-3xl md:hidden"
-            initial={{opacity: 0, clipPath: 'circle(0% at 90% 5%)'}}
-            animate={{opacity: 1, clipPath: 'circle(140% at 90% 5%)'}}
-            exit={{opacity: 0, clipPath: 'circle(0% at 90% 5%)'}}
-            transition={{duration: 0.8, ease: [0.32, 0.72, 0, 1]}}
+            initial={
+              shouldReduceMotion
+                ? {opacity: 0}
+                : {opacity: 0, clipPath: 'circle(0% at 90% 5%)'}
+            }
+            animate={
+              shouldReduceMotion
+                ? {opacity: 1}
+                : {opacity: 1, clipPath: 'circle(140% at 90% 5%)'}
+            }
+            exit={
+              shouldReduceMotion
+                ? {opacity: 0}
+                : {opacity: 0, clipPath: 'circle(0% at 90% 5%)'}
+            }
+            transition={{
+              duration: shouldReduceMotion ? 0.16 : 0.58,
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             <div className="mx-auto flex max-w-md flex-col gap-4">
               {links.map((link, index) => (
@@ -150,9 +177,9 @@ export function Header() {
                   initial={{opacity: 0, y: 48}}
                   animate={{opacity: 1, y: 0}}
                   transition={{
-                    duration: 0.7,
-                    delay: 0.1 + index * 0.06,
-                    ease: [0.32, 0.72, 0, 1],
+                    duration: shouldReduceMotion ? 0.16 : 0.48,
+                    delay: shouldReduceMotion ? 0 : 0.1 + index * 0.06,
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                 >
                   {link.label}
@@ -164,9 +191,9 @@ export function Header() {
                 initial={{opacity: 0, y: 48}}
                 animate={{opacity: 1, y: 0}}
                 transition={{
-                  duration: 0.7,
-                  delay: 0.4,
-                  ease: [0.32, 0.72, 0, 1],
+                  duration: shouldReduceMotion ? 0.16 : 0.48,
+                  delay: shouldReduceMotion ? 0 : 0.34,
+                  ease: [0.16, 1, 0.3, 1],
                 }}
               >
                 <a

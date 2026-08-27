@@ -1,6 +1,6 @@
 'use client';
 
-import {motion} from 'framer-motion';
+import {motion, useReducedMotion} from 'framer-motion';
 import type {PropsWithChildren} from 'react';
 
 import {cn} from '@/lib/utils';
@@ -18,14 +18,23 @@ export function Reveal({
   as = 'div',
 }: RevealProps) {
   const Component = motion[as];
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <Component
       className={cn(className)}
-      initial={{opacity: 0, y: 64, filter: 'blur(12px)'}}
+      initial={
+        shouldReduceMotion
+          ? {opacity: 0.82}
+          : {opacity: 0.72, y: 24, filter: 'blur(8px)'}
+      }
       whileInView={{opacity: 1, y: 0, filter: 'blur(0px)'}}
       viewport={{once: true, amount: 0.18}}
-      transition={{duration: 0.9, delay, ease: [0.32, 0.72, 0, 1]}}
+      transition={{
+        duration: shouldReduceMotion ? 0.16 : 0.64,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
       {children}
     </Component>

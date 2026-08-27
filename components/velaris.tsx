@@ -1,7 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
+import {useReducedMotion} from 'framer-motion';
+import {useEffect, useRef} from 'react';
+
+import {cn} from '@/lib/utils';
 
 const vertexShaderGLSL = `
 attribute vec2 position;
@@ -94,51 +96,60 @@ export interface VelarisProps {
   children?: React.ReactNode;
 }
 
-const DEFAULT_COLORS = ["#65ba84", "#4ade80", "#3ab567", "#000000"];
+const DEFAULT_COLORS = ['#65ba84', '#4ade80', '#3ab567', '#000000'];
+
+function hexToRgb(hex: string): [number, number, number] {
+  const h = hex.replace('#', '');
+  return [
+    parseInt(h.slice(0, 2), 16) / 255,
+    parseInt(h.slice(2, 4), 16) / 255,
+    parseInt(h.slice(4, 6), 16) / 255,
+  ];
+}
 
 const Velaris = ({
-  bg = "#000000",
+  bg = '#000000',
   colors = DEFAULT_COLORS,
   speed = 2.0,
   grain = 0.3,
-  height = "100vh",
+  height = '100vh',
   className,
   children,
 }: VelarisProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const hexToRgb = (hex: string): [number, number, number] => {
-    const h = hex.replace("#", "");
-    return [
-      parseInt(h.slice(0, 2), 16) / 255,
-      parseInt(h.slice(2, 4), 16) / 255,
-      parseInt(h.slice(4, 6), 16) / 255,
-    ];
-  };
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
 
-    const gl = canvas.getContext("webgl");
+    const gl = canvas.getContext('webgl', {
+      alpha: false,
+      antialias: false,
+      powerPreference: 'high-performance',
+    });
     if (!gl) return;
 
     const createShader = (type: number, src: string) => {
-      const s = gl.createShader(type)!;
+      const s = gl.createShader(type);
+      if (!s) throw new Error('Could not create the hero shader.');
       gl.shaderSource(s, src);
       gl.compileShader(s);
       return s;
     };
 
-    const program = gl.createProgram()!;
+    const program = gl.createProgram();
+    if (!program) return;
     gl.attachShader(program, createShader(gl.VERTEX_SHADER, vertexShaderGLSL));
     gl.attachShader(
       program,
       createShader(gl.FRAGMENT_SHADER, fragmentShaderGLSL),
     );
     gl.linkProgram(program);
+    // Biome mistakes WebGL's useProgram method for a React Hook.
+    // biome-ignore lint/correctness/useHookAtTopLevel: This is a WebGL API call.
     gl.useProgram(program);
 
     const buffer = gl.createBuffer();
@@ -149,16 +160,16 @@ const Velaris = ({
       gl.STATIC_DRAW,
     );
 
-    const pos = gl.getAttribLocation(program, "position");
+    const pos = gl.getAttribLocation(program, 'position');
     gl.enableVertexAttribArray(pos);
     gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
 
     const locs = {
-      res: gl.getUniformLocation(program, "u_resolution"),
-      time: gl.getUniformLocation(program, "u_time"),
-      grain: gl.getUniformLocation(program, "u_grain"),
-      colors: gl.getUniformLocation(program, "u_colors"),
-      bg: gl.getUniformLocation(program, "u_bg"),
+      res: gl.getUniformLocation(program, 'u_resolution'),
+      time: gl.getUniformLocation(program, 'u_time'),
+      grain: gl.getUniformLocation(program, 'u_grain'),
+      colors: gl.getUniformLocation(program, 'u_colors'),
+      bg: gl.getUniformLocation(program, 'u_bg'),
     };
 
     const resize = () => {
@@ -170,33 +181,78 @@ const Velaris = ({
 
     const ro = new ResizeObserver(resize);
     ro.observe(container);
+    resize();
 
-    let raf: number;
+    const flatColors = new Float32Array(colors.slice(0, 4).flatMap(hexToRgb));
+    let raf = 0;
+    let isVisible = true;
+    let startTime: number | null = null;
+
     const render = (t: number) => {
+      if (!isVisible || document.hidden) {
+        raf = 0;
+        return;
+      }
+
+      if (startTime === null) startTime = t;
+      const elapsed = shouldReduceMotion ? 0 : t - startTime;
+
       gl.uniform2f(locs.res, canvas.width, canvas.height);
-      gl.uniform1f(locs.time, t * 0.001 * speed);
+      gl.uniform1f(locs.time, elapsed * 0.001 * speed);
       gl.uniform1f(locs.grain, grain);
       gl.uniform3f(locs.bg, ...hexToRgb(bg));
 
-      const flat = new Float32Array(colors.slice(0, 4).flatMap(hexToRgb));
-      gl.uniform3fv(locs.colors, flat);
+      gl.uniform3fv(locs.colors, flatColors);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      raf = shouldReduceMotion ? 0 : requestAnimationFrame(render);
+    };
+
+    const start = () => {
+      if (raf || !isVisible || document.hidden) return;
       raf = requestAnimationFrame(render);
     };
 
-    raf = requestAnimationFrame(render);
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) start();
+        else if (raf) {
+          cancelAnimationFrame(raf);
+          raf = 0;
+        }
+      },
+      {rootMargin: '160px'},
+    );
+
+    const handleVisibility = () => {
+      if (document.hidden && raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      } else {
+        start();
+      }
+    };
+
+    io.observe(container);
+    document.addEventListener('visibilitychange', handleVisibility);
+    start();
+
     return () => {
       ro.disconnect();
-      cancelAnimationFrame(raf);
+      io.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibility);
+      if (raf) cancelAnimationFrame(raf);
+      gl.deleteBuffer(buffer);
+      gl.deleteProgram(program);
     };
-  }, [bg, colors, speed, grain]);
+  }, [bg, colors, speed, grain, shouldReduceMotion]);
 
   return (
     <div
       ref={containerRef}
-      style={{ height }}
-      className={cn("relative w-full overflow-hidden", className)}
+      style={{height}}
+      className={cn('relative w-full overflow-hidden bg-primary', className)}
     >
       <canvas
         ref={canvasRef}
